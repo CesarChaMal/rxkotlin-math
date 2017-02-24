@@ -3,7 +3,7 @@ package org.nield.rxkotlinmath
 import rx.Observable
 import kotlin.comparisons.compareValues
 
-fun <T: Number> Observable<T>.mode() = groupBy { it }.flatMap { grp -> grp.count().map { grp.key to it } }
+fun <T> Observable<T>.mode() = groupBy { it }.flatMap { grp -> grp.count().map { grp.key to it } }
         .toSortedList { p1,p2 -> compareValues(p2.second,p1.second)  }
         .flatMap { list ->
             Observable.from(list)

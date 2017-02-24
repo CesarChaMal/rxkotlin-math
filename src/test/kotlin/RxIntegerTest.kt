@@ -87,4 +87,20 @@ class RxIntegerTest {
             .toBlocking()
             .first()
             .let { assertTrue(it == BigDecimal.valueOf(11.180339887498949)) }
+
+    @Test
+    fun test() {
+        val items = Observable.just(1.234, 1231.5, 345343.2, 1231.5, 0232.0, 02342.0)
+                .publish()
+                .autoConnect(7)
+
+        items.min().subscribe { println("Min: $it")}
+        items.max().subscribe { println("Max: $it")}
+        items.max().subscribe { println("Sum: $it")}
+        items.mode().subscribe { println("Mode: $it")}
+
+        items.averageAsDouble().subscribe { println("Average: $it") }
+        items.varianceAsDouble().subscribe { println("Variance: $it")}
+        items.standardDeviationAsDouble().subscribe { println("Standard Deviation: $it")}
+    }
 }
