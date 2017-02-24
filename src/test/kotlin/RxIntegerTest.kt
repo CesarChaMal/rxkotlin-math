@@ -74,5 +74,4 @@ class RxIntegerTest {
             .toBlocking()
             .first()
             .let { assertTrue(it == BigDecimal.valueOf(11.180339887498949)) }
-
 }
