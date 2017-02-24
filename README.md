@@ -16,7 +16,7 @@ items.mode().subscribe { println("Mode: $it")}
 
 items.average().subscribe { println("Average: $it") }
 items.variance().subscribe { println("Variance: $it")}
-items.standardDeviationAsDouble().subscribe { println("Standard Deviation: $it")}
+items.standardDeviation().subscribe { println("Standard Deviation: $it")}
 ```
 
 **OUTPUT:**
