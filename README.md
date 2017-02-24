@@ -14,8 +14,8 @@ items.max().subscribe { println("Max: $it")}
 items.sum().subscribe { println("Sum: $it")}
 items.mode().subscribe { println("Mode: $it")}
 
-items.averageAsDouble().subscribe { println("Average: $it") }
-items.varianceAsDouble().subscribe { println("Variance: $it")}
+items.average().subscribe { println("Average: $it") }
+items.variance().subscribe { println("Variance: $it")}
 items.standardDeviationAsDouble().subscribe { println("Standard Deviation: $it")}
 ```
 

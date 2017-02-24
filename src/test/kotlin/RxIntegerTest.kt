@@ -67,19 +67,6 @@ class RxIntegerTest {
             .first()
             .let { assertTrue(it == 125.0) }
 
-    @Test
-    fun testStandardDeviationAsDouble() = Observable.just(20, 30, 40, 10)
-            .standardDeviationAsDouble()
-            .toBlocking()
-            .first()
-            .let { assertTrue(it == 11.180339887498949) }
-
-    @Test
-    fun testStandardDeviationAsFloat() = Observable.just(20, 30, 40, 10)
-            .standardDeviationAsFloat()
-            .toBlocking()
-            .first()
-            .let { assertTrue(it == 11.18034F) }
 
     @Test
     fun testStandardDeviationAsBigDecimal() = Observable.just(20, 30, 40, 10)
