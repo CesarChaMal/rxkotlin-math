@@ -1,7 +1,6 @@
 package org.nield.rxkotlinmath
 
 import rx.Observable
-import java.math.BigDecimal
 
 fun Observable<Double>.sum() = reduce { total, next -> total + next }
 fun Observable<Double>.min() = reduce {min, next -> if (min > next) next else min }
@@ -17,5 +16,12 @@ fun Observable<Double>.variance() = replay().autoConnect().let { numbers ->
     }.average()
 }
 
+fun Observable<Double>.meanAbsoluteDeviation() = replay().autoConnect().let { numbers ->
+    numbers.average().flatMap { avg ->
+        numbers.map { (it - avg) }
+    }.average()
+}
+
 fun Observable<Double>.standardDeviation() = variance()
         .map { Math.sqrt(it.toDouble()) }
+

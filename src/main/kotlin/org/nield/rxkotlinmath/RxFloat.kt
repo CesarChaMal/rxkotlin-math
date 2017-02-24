@@ -11,6 +11,12 @@ fun Observable<Float>.average() = publish()
             Observable.zip(it.sum(), it.count()) { sum, count -> sum / count.toFloat() }
         }
 
+fun Observable<Float>.meanAbsoluteDeviation() = replay().autoConnect().let { numbers ->
+    numbers.average().flatMap { avg ->
+        numbers.map { (it - avg) }
+    }.average()
+}
+
 fun Observable<Float>.variance() = replay().autoConnect().let { numbers ->
     numbers.average().flatMap { avg ->
         numbers.map { (it.toDouble() - avg).let { it * it } }
