@@ -9,12 +9,12 @@ fun Observable<Long>.max() = reduce {min, next -> if (min < next) next else min 
 
 fun Observable<Long>.averageAsDouble() = map(Long::toDouble).average()
 fun Observable<Long>.averageAsFloat() = map(Long::toFloat).average()
-fun Observable<Long>.averageAsBigDecimal() = map { BigDecimal.valueOf(it.toLong()) }.average()
+fun Observable<Long>.averageAsBigDecimal() = map { BigDecimal.valueOf(it) }.average()
 
 fun Observable<Long>.varianceAsDouble() = map(Long::toDouble).variance()
 fun Observable<Long>.varianceAsFloat() = map(Long::toFloat).variance()
-fun Observable<Long>.varianceAsBigDecimal() = map { BigDecimal.valueOf(it.toLong()) }.variance()
+fun Observable<Long>.varianceAsBigDecimal() = map { BigDecimal.valueOf(it) }.variance()
 
 fun Observable<Long>.standardDeviationAsFloat() = map(Long::toFloat).standardDeviation()
 fun Observable<Long>.standardDeviationAsDouble() = map(Long::toDouble).standardDeviation()
-fun Observable<Long>.standardDeviationAsBigDecimal() =  map { BigDecimal.valueOf(it.toLong()) }.standardDeviation()
+fun Observable<Long>.standardDeviationAsBigDecimal() =  map { BigDecimal.valueOf(it) }.standardDeviation()
