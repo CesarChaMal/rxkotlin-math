@@ -2,6 +2,8 @@
 
 Mathematical and statistical extension functions for RxKotlin.
 
+Development will resume after I get [RxKotlin Statistics](https://github.com/thomasnield/kotlin-statistics) off the ground so I can use it as a dependency.
+
 This is a work-in-progress to create a comprehensive library of Kotlin extension functions for RxJava 1.0/2.0 to quickly perform common math and statistics computations. The plan is to as precisely as possible support `Int`, `Double`, `Float`, `Long`, `BigDecimal`, and `BigInteger` variants of these extension functions.
 
 ```kotlin
